@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* SideBar */
+.config-sidebar {
+    width: 200px;
+    background-color: #373737;
+    color: #fff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.config-sidebar h2 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/*Thumbnail*/
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-control label{
+    cursor: pointer;
+}
+
+
+[type=radio]{
+    cursor: pointer;
+    position: relative;
+    margin: 40px;
+}
+
+[type=radio]:before{
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #8f8686;
+    border-radius: 10px;
+}
+
+[type=radio]:checked:before{
+    background: #248a6a
+}
+
+/*Video Display*/
+.video-display {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    height: 100%;
+}
+
+.video-display video {
+    max-width: 100%;
+    max-height: 100%;
+}
