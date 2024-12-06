@@ -73,7 +73,7 @@ function displayCameras(cameraList, socket) {
 
 // Inicialize após o carregamento completo do DOM
 window.onload = async () => {
-    const socket = io('http://localhost:3000');
+    const socket = io('http://35.247.230.61:80');
 
     // Conectar o Profissional ao servidor
     socket.emit('joinProfessional');
