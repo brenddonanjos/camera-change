@@ -1,37 +1,9 @@
 version: '3.8'
 services:
-  nginx:
-    image: nginx:1.27
-    container_name: professional
-    ports:
-      - "80:80"
-    volumes:
-      - ./professional:/usr/share/nginx/html:ro
-    networks:
-      - camera_network
-
   beneficiary:
     image: nginx:1.27
     container_name: beneficiary
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
-      - ./beneficiary:/usr/share/nginx/html:ro
-    networks:
-      - camera_network
-
-  backend:
-    build: .
-    container_name: backend
-    volumes:
-      - ./backend:/app
-    ports:
-      - "3000:3000"
-    command: bash -c "yarn start"
-    networks:
-      - camera_network
-
-networks:
-  camera_network:
-    name: camera_network
-    driver: bridge
+      - .:/usr/share/nginx/html:ro
