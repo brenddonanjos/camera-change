@@ -58,7 +58,7 @@ function sendCameraList(socket, cameras) {
 window.onload = async () => {
     const cameras = await listCameras();
 
-    const socket = io('http://localhost:3000');
+    const socket = io('http://35.247.230.61:80');
 
     socket.on("connect", () => {
         socket.emit("sendCameras", cameras)
