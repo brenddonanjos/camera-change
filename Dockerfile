@@ -5,10 +5,10 @@ FROM node:18
 WORKDIR /app
 
 # Copy the rest of the application code to the working directory
-COPY ./backend .
+COPY . .
 
 # Install dependencies
 RUN yarn install
 
 # Expose the application port
-EXPOSE 3000
+EXPOSE 80

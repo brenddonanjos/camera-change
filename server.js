@@ -8,12 +8,12 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
     cors: {
-      origin: ['http://localhost:8080', 'http://localhost'], 
-      methods: ['GET', 'POST'], 
-      allowedHeaders: ['Content-Type'],
-      credentials: true,
+        origin: ['http://localhost:8080', 'http://localhost'],
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type'],
+        credentials: true,
     }
-  });
+});
 
 let beneficiaryCameras = [];
 
@@ -36,8 +36,8 @@ io.on('connection', (socket) => {
         console.log('Profissional escolheu a Câmera com ID:', camera);
 
         // Envia para o Beneficiário específico
-        socket.to('beneficiary').emit('cameraSelected', camera); 
-        
+        socket.to('beneficiary').emit('cameraSelected', camera);
+
         // Envia para todos, exceto o remetente
         //socket.broadcast.emit('cameraSelected', camera); 
     });
@@ -54,6 +54,10 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log('Servidor Node.js com Socket.io rodando na porta 3000');
+app.get('/', (req, res) => {
+    res.send('Server node is running');
+})
+
+server.listen(80, () => {
+    console.log('Servidor Node.js com Socket.io rodando');
 });
