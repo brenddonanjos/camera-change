@@ -7,9 +7,6 @@ WORKDIR /app
 # Copy the rest of the application code to the working directory
 COPY . .
 
-RUN sudo apt-get update
-RUN sudo apt-get install -y yarn
-
 # Install dependencies
 RUN yarn install
 
